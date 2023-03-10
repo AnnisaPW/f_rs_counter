@@ -5,15 +5,25 @@ class HomeCounterAsync extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dt = homeData.state;
+    final ct = HomeCtrl();
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        const Text(
-          '0',
-          textScaleFactor: 3,
+        OnBuilder.all(
+          listenTo: dt.rxAngkaAsync,
+          onWaiting: () => const Text('Loading...'),
+          onError: (error, refreshError) => const Text('eror'),
+          onData: (data) => Text(
+            '$data',
+            textScaleFactor: 3,
+          ),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            ct.gettambah();
+          },
           child: const Text('counter async'),
         ),
       ],

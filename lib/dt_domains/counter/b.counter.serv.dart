@@ -7,4 +7,8 @@ class CounterServ {
   tambah() {
     pv.rxAngka.state++;
   }
+
+  tambahAsync() {
+    pv.rxAngkaAsync.stateAsync = counterRepo.state.tambah(pv.rxAngkaAsync.state);
+  }
 }

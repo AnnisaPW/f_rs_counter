@@ -4,4 +4,8 @@ class HomeCtrl {
   tambah() {
     counterServ.tambah();
   }
+
+  gettambah() {
+    counterServ.tambahAsync();
+  }
 }

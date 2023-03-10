@@ -4,4 +4,5 @@ final homeData = RM.inject(() => HomeData());
 
 class HomeData {
   final rxAngka = counterProv.state.rxAngka;
+  final rxAngkaAsync = counterProv.state.rxAngkaAsync;
 }
