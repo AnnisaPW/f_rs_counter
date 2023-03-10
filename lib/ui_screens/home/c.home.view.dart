@@ -13,7 +13,10 @@ class HomeView extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [HomeCounterSync()],
+          children: const [
+            HomeCounterSync(),
+            HomeCounterAsync(),
+          ],
         ),
       ),
     );

@@ -8,3 +8,4 @@ part 'c.home.view.dart';
 
 part 'widgets/a.appbar.dart';
 part 'widgets/b.counter.sync.dart';
+part 'widgets/c.counter.async.dart';
