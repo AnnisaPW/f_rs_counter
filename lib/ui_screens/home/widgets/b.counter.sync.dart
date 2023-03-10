@@ -7,15 +7,21 @@ class HomeCounterSync extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ct = HomeCtrl();
+    final dt = homeData.state;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        const Text(
-          '0',
-          textScaleFactor: 3,
+        OnReactive(
+          () => Text(
+            '${dt.rxAngka.state}',
+            textScaleFactor: 3,
+          ),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            ct.tambah();
+          },
           child: const Text('counter sync'),
         ),
       ],
